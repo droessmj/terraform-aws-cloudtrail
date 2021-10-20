@@ -1,6 +1,8 @@
 locals {
-  bucket_name     = length(var.bucket_name) > 0 ? var.bucket_name : "${var.prefix}-bucket-${random_id.uniq.hex}"
   bucket_arn      = var.use_existing_cloudtrail ? trimsuffix(var.bucket_arn, "/") : aws_s3_bucket.cloudtrail_bucket[0].arn
+  
+  # if we have bucket_arn, parse bucket_name from that?  -- arn:aws:s3:::lacework-ct-bucket-23b47ffd
+  bucket_name     = var.use_existing_cloudtrail ? element(split(":",var.bucket_arn),(length(split(":",var.bucket_arn))-1)) :  "${var.prefix}-bucket-${random_id.uniq.hex}"
   log_bucket_name = length(var.log_bucket_name) > 0 ? var.log_bucket_name : "${local.bucket_name}-access-logs"
   sns_topic_name  = length(var.sns_topic_name) > 0 ? var.sns_topic_name : "${var.prefix}-sns-${random_id.uniq.hex}"
   sns_topic_arn   = (var.use_existing_cloudtrail && var.use_existing_sns_topic) ? var.sns_topic_arn : aws_sns_topic.lacework_cloudtrail_sns_topic[0].arn
