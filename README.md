@@ -1,5 +1,7 @@
 <a href="https://lacework.com"><img src="https://techally-content.s3-us-west-1.amazonaws.com/public-content/lacework_logo_full.png" width="600"></a>
 
+[![IaC](https://app.soluble.cloud/api/v1/public/badges/d3c9e090-2119-457d-a384-d2bdee5936de.svg)](https://app.soluble.cloud/repos/details/github.com/droessmj/terraform-aws-cloudtrail)  [![HIPAA](https://app.soluble.cloud/api/v1/public/badges/c44720aa-260d-4e25-b9cd-a16c0ce73a0e.svg)](https://app.soluble.cloud/repos/details/github.com/droessmj/terraform-aws-cloudtrail)  
+
 # terraform-aws-cloudtrail
 
 [![GitHub release](https://img.shields.io/github/release/lacework/terraform-aws-cloudtrail.svg)](https://github.com/lacework/terraform-aws-cloudtrail/releases/)
